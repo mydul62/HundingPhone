@@ -16,10 +16,10 @@
     <header class=" bg-[#0D6EFD0D]">
       <div class="navbar  max-w-[1340px] mx-auto py-[50px]">
         <div class="flex-1">
-          <a class="  text-3xl">Phone<span class="text-orange-500">Hunter</span></a>
+          <a class=" text-xl lg:text-3xl">Phone<span class="text-orange-500">Hunter</span></a>
         </div>
         <div class="flex-none">
-          <div class="dropdown dropdown-end fixed right-5 top-[30%]">
+          <div class="dropdown dropdown-end z-40 fixed right-5 top-[30%]">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle bg-black text-white border-orange-500 border-4 ">
               <div class="indicator">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
@@ -56,9 +56,9 @@
         </div>
       </div>
       <div class="hero-section container mx-auto pb-[250px]">
-        <div class="hero-dis w-[60%] mx-auto  text-center space-y-6">
-          <h1 class=" text-6xl font-bold">Apple Iphone 13 Pro Max</h1>
-          <p class=" text-xl px-6">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou.</p>
+        <div class="hero-dis w-full lg:w-[60%] mx-auto  text-center space-y-6">
+          <h1 class=" text-3xl lg:text-6xl font-bold">Apple Iphone 13 Pro Max</h1>
+          <p class=" text lg:text-xl px-6">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou.</p>
           <button class=" bg-slate-800 px-6 py-4 text-white rounded-md">View cart</button>
         </div>
       </div>
@@ -73,7 +73,7 @@
           id="search-phone"
           type="text"
           placeholder="Search here"
-          class="border py-4  px-10 rounded-l-xl outline-none w-[35%] input-bordered rounded-none"
+          class="border py-4  px-10 rounded-l-xl outline-none w-[60%] lg:w-[35%] input-bordered rounded-none"
         />
         <button
           onclick="phoneSearch()"
@@ -86,7 +86,7 @@
         <div id="loading-spinner" class="spinner text-center pt-40 hidden">
           <span class="loading loading-spinner text-neutral"></span>
         </div>
-        <div id="phones_cards" class="phones gap-6 grid grid-cols-3"></div>
+        <div id="phones_cards" class="phones gap-6 grid grid-cols-1 lg:grid-cols-3"></div>
         <!-- show all  -->
         <div id="show-all-container" class="flex justify-center hidden my-10">
           <button onclick="showAll()" class="btn btn-outline btn-success">
@@ -101,7 +101,7 @@
         </div>
       </dialog>
     </main>
-    <footer class="p-20 bg-neutral text-neutral-content bg-[#030712] mt-20">
+    <footer class="p-8 lg:p-20 bg-neutral text-neutral-content bg-[#030712] mt-20">
       <div class="flex justify-center mt-[-80px] z-0">
         <a href="#Home" class="" ><img class="w-[65px] " src="images/arrow-top.png" alt=""></a>
       </div>
