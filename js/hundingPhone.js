@@ -32,7 +32,9 @@ const phoneCardAdd =(phones,isShowAll)=>{
       <p>${phone.slug}</p>
       <h3 class="text-2xl font-bold">$999</h3>
       <div class="card-actions">
-        <button onclick = "showDetails('${phone.slug}');" class="bg-[#0D6EFD] px-4 py-2 rounded-md text-white">Show Details</button>
+        <button onclick = "showDetails('${phone.slug}')" class="bg-[#0D6EFD] px-4 py-2 rounded-md text-white">Show Details</button>
+        <button onClick="cartCounter()" " class="bg-[#0D6EFD] px-4 py-2 rounded-md text-white">Add to Cart</button>
+        
       </div>
     </div>
   </div>`
@@ -63,14 +65,12 @@ const loadingSpinner=(isloading)=>{
     spinner.classList.add('hidden');
   }
 }
-let count = 0;
+
 const showDetails =async (id)=>{
   const res =await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
   const data =await res.json();
   const phones = data.data;
    console.log(phones)
-   count +=1;
-  
   const modalBox = document.getElementById('Modal_container')
   modalBox.innerHTML = `<div>
   <div class="image flex justify-center  bg-[#0D6EFD0D]">
@@ -88,21 +88,23 @@ const showDetails =async (id)=>{
   <h3 class=" text-2xl text-[#403F3F]">Brand : <span class=" text-xl text-[#706F6F]">${phones.brand}</span></h3>
   <h3 class=" text-2xl text-[#403F3F]">GPS :<span class=" text-xl text-[#706F6F]"> ${phones.others.GPS?phones.others.GPS : "Not available"}</span></h3>
   </div>
-  <div class=" flex justify-center"><button onClick="cartCounter()" class=" bg-slate-800 px-6 py-4 text-white rounded-md">add cart</button></div>
+
   <div class="modal-action">
     <form method="dialog">
       <!-- if there is a button in form, it will close the modal -->
       <button class="btn">Close</button>
     </form>
   </div>
-</div>`
+</div>
+
+`
   my_modal_5.showModal();
 }
-
+let count = 0;
 const cartCounter=()=>{
+  count +=1;
   const cartCounterId = document.getElementById('counter') ;
   const itemCount = document.getElementById('itemCount');
   cartCounterId.innerText = parseInt(count);
   itemCount.innerText = parseInt(count);
-
 }
