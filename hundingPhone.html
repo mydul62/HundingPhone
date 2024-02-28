@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hunding phone</title>
+    <!-- daisy ui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar bg-base-100">
+        <div class="flex-1">
+          <a class="btn btn-ghost text-xl">BDphoneHUB</a>
+        </div>
+        <div class="flex-none gap-2">
+          <div class="flex">
+            <input
+              id="search-phone"
+              type="text"
+              placeholder="Search here"
+              class="border py-3 px-2 rounded-l-xl outline-none input-bordered rounded-none w-24 md:w-auto"
+            />
+            <button
+              onclick="phoneSearch()"
+              class="px-2 rounded-r-md bg-black text-white"
+            >
+              search
+            </button>
+          </div>
+          <div class="dropdown dropdown-end">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-ghost btn-circle avatar"
+            >
+              <div class="w-10 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="image/mydul-removebg-preview.png"
+                />
+              </div>
+            </div>
+            <ul
+              tabindex="0"
+              class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a class="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li><a>Settings</a></li>
+              <li><a>Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="max-w-7xl mx-auto">
+        <div id="loading-spinner" class="spinner text-center pt-40 hidden">
+          <span class="loading loading-spinner text-neutral"></span>
+        </div>
+        <div id="phones_cards" class="phones gap-6 grid grid-cols-3"></div>
+        <!-- show all  -->
+        <div id="show-all-container" class="flex justify-center hidden">
+          <button onclick="showAll()" class="btn btn-outline btn-success">
+            Show more
+          </button>
+        </div>
+      </div>
+      <!-- Open the modal using ID.showModal() method -->
+      <!-- <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle"> -->
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">Hello!</h3>
+          <p class="py-4">Press ESC key or click the button below to close</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </main>
+    <footer></footer>
+    <script src="js/hundingPhone.js"></script>
+  </body>
+</html>
