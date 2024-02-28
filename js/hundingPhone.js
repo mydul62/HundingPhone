@@ -1,5 +1,6 @@
 const loadPhoneDetails = async (searchItem,isShowAll) =>{
-  const res =await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchItem}`);
+  const set =await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchItem}`);
+  const res = searchItem? set : await fetch(`https://openapi.programming-hero.com/api/phones?search=iphone`);
   const data =await res.json();
   const phones = data.data;
   phoneCardAdd(phones,isShowAll)
